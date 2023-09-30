@@ -4,7 +4,7 @@ enemiesToSpawn = 0;
 spawnTime = 0;		//Time before next spawn
 spawnRate = 1;		//Enemies per second
 
-minSpawnDistance = 480;
+minSpawnDistance = 336;
 spawnDistanceRadius = 640;
 
 ghostChance = 0;	//1 = 100%

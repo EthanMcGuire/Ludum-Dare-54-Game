@@ -1,6 +1,6 @@
-/// @function scrEntityOutOfView(entity)
+/// @function entityOutOfView(entity)
 /// @return {Bool} returns true if the entity is out of view.
-function scrEntityOutOfView(entity)
+function entityOutOfView(entity)
 {
 	with (entity)
 	{

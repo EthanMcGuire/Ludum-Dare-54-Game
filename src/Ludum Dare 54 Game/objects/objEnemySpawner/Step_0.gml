@@ -1,5 +1,10 @@
 /// @description Spawn enemies
 
+if (gamePaused())
+{
+	return;	
+}
+
 //Enemies to spawn?
 if (enemiesToSpawn > 0)
 {
@@ -15,6 +20,9 @@ if (enemiesToSpawn > 0)
 		var enemy = noone;
 		var spawnX, spawnY;
 		var centerX, centerY;
+		
+		centerX = room_width / 2;
+		centerY = room_height / 2;
 		
 		//Set spawn position
 		do
@@ -33,12 +41,12 @@ if (enemiesToSpawn > 0)
 		if (random(1) <= ghostChance)
 		{
 			//Spawn ghost	
-			enemy = instance_create_layer(spawnX, spawnY, "Enemies", objGhost);
+			enemy = instance_create_layer(spawnX, spawnY, "Objects", objGhost);
 		}
 		else
 		{
 			//Spawn zombie	
-			enemy = instance_create_layer(spawnX, spawnY, "Enemies", objZombie);
+			enemy = instance_create_layer(spawnX, spawnY, "Objects", objZombie);
 		}
 			
 		//Set enemy variables

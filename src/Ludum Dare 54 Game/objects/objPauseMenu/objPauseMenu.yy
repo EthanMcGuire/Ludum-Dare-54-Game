@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "objUpgradeMenu",
+  "name": "objPauseMenu",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],

@@ -11,7 +11,10 @@
     "name": "Enemy Objects",
     "path": "folders/Objects/Enemy Objects.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "objDepthObject",
+    "path": "objects/objDepthObject/objDepthObject.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

@@ -8,13 +8,18 @@ enum PlayerState
 	DEAD
 }
 
+state = PlayerState.IDLE;
+
 hp = 3;
 spd = 1;
-moveDir = 0;
+
+moveXRemainder = 0;
+moveYRemainder = 0;
 
 knockback = 0;
 knockbackDir = 0;
 knockbackReduction = 0.1;
+hurtKnockback = 2;	//Knockback when hurt
 
 spriteDay = sprPlayerDay;
 spriteNight = sprPlayerNight;
@@ -32,5 +37,29 @@ switchSprite = function()
 	else
 	{
 		sprite_index = spriteDay;	
+	}
+}
+
+/// @function takeDamage(dir)
+/// @description Player takes 1 damage. Player dies at 0 HP.
+/// @param {Real} dir The direction of the attack. Used for knockback.
+takeDamage = function(dir)
+{
+	hp--;
+	
+	if (hp == 0)
+	{
+		objAudioController.playSound(sndPlayerDie);
+		
+		playerSetState(PlayerState.DEAD);	
+	}
+	else
+	{
+		knockback = hurtKnockback;
+		knockbackDir = dir;
+		
+		objAudioController.playSound(sndPlayerHurt);
+		
+		playerSetState(PlayerState.HURT);	
 	}
 }
