@@ -6,12 +6,28 @@
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
-  "instanceCreationOrder": [],
+  "instanceCreationOrder": [
+    {"name":"inst_207EC55B","path":"rooms/rmGame/rmGame.yy",},
+  ],
   "isDnd": false,
   "layers": [
-    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Day","depth":0,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":23,"SerialiseWidth":40,"TileCompressedData":[
--920,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"tsDay","path":"tilesets/tsDay/tsDay.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
-    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Main","depth":0,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_207EC55B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"objCamera","path":"objects/objCamera/objCamera.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":16.0,"y":16.0,},
+      ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
+    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":23,"SerialiseWidth":40,"TileCompressedData":[
+-41,4,-34,1,-4,2,-2,4,-37,1,3,2,4,4,-14,1,3,2,1,3,-3,1,1,3,-3,1,1,3,-3,1,1,3,-9,1,-2,4,-4,1,-2,2,
+-4,1,5,3,1,3,2,1,-3,2,2,1,2,-7,1,-3,3,5,1,3,3,2,2,-3,1,-2,4,-3,1,-4,2,-2,1,-2,3,-3,1,-3,2,7,
+1,3,1,2,2,3,3,-4,1,2,2,3,-3,1,-2,2,-3,1,-2,4,-3,1,1,2,-8,1,1,3,-6,1,1,3,-4,1,-3,3,3,1,3,2,
+-4,1,-2,2,-2,1,-2,4,-4,1,4,2,3,1,3,-5,1,3,3,1,3,-3,1,4,3,1,1,3,-6,1,1,2,-3,1,-3,2,-2,1,-2,4,
+-12,1,1,3,-15,1,-2,3,10,1,3,1,3,2,2,1,1,4,4,-6,1,1,2,-5,1,3,3,1,3,-11,1,1,2,-3,3,-4,1,16,3,2,
+1,3,4,4,3,1,2,2,1,1,2,1,1,2,-5,1,2,2,3,-7,1,6,2,1,1,3,1,3,-4,1,10,3,2,1,3,4,4,2,3,1,
+1,-3,2,7,3,2,1,1,3,3,1,-3,2,5,1,2,1,2,2,-7,1,21,3,1,3,1,1,3,1,1,3,4,4,2,2,3,3,2,2,3,
+1,1,3,-3,1,-2,3,4,2,1,1,3,-9,1,-4,3,-2,1,-2,2,5,1,3,4,4,3,-3,2,2,3,2,-3,1,10,2,3,1,1,2,1,
+1,3,2,2,-8,1,-4,2,-2,1,-3,2,4,3,1,4,4,-3,2,-9,1,-6,2,-9,1,-4,2,1,1,-6,2,-2,4,-8,2,2,3,1,-3,3,
+4,2,3,3,2,-10,1,3,2,3,1,-3,2,7,3,1,1,2,2,4,4,-3,2,1,1,-6,2,1,1,-4,2,1,3,-8,1,8,3,1,3,2,
+3,1,3,3,-4,2,4,1,2,4,4,-3,2,-2,1,-5,2,-12,1,-6,3,-4,1,8,2,1,3,2,3,2,4,4,-9,2,-2,1,-2,3,-2,2,
+16,3,1,3,3,1,3,1,1,2,3,2,3,1,2,1,1,-3,2,-2,3,4,2,3,4,4,-9,2,-2,1,-3,2,-2,3,-2,1,3,2,1,3,
+-17,1,-2,4,-7,2,-3,1,-4,2,2,1,2,-8,1,-2,2,1,1,-9,2,-2,1,-41,4,-40,1,],"TileDataFormat":1,},"tilesetId":{"name":"tsDay","path":"tilesets/tsDay/tsDay.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
   "parent": {
@@ -34,7 +50,7 @@
   },
   "sequenceId": null,
   "views": [
-    {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
+    {"hborder":32,"hport":360,"hspeed":-1,"hview":360,"inherit":false,"objectId":null,"vborder":32,"visible":true,"vspeed":-1,"wport":640,"wview":640,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
@@ -46,7 +62,7 @@
   "viewSettings": {
     "clearDisplayBuffer": true,
     "clearViewBackground": false,
-    "enableViews": false,
+    "enableViews": true,
     "inheritViewSettings": false,
   },
   "volume": 1.0,

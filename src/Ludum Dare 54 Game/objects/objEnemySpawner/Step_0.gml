@@ -13,6 +13,16 @@ if (enemiesToSpawn > 0)
 		
 		var grave = false;
 		var enemy = noone;
+		var spawnX, spawnY;
+		var centerX, centerY;
+		
+		//Set spawn position
+		do
+		{
+			spawnX = irandom_range(centerX - spawnDistanceRadius, centerX + spawnDistanceRadius);
+			spawnY = irandom_range(centerY - spawnDistanceRadius, centerY + spawnDistanceRadius);
+		}
+		until (point_distance(centerX, centerY, spawnX, spawnY) >= minSpawnDistance);
 		
 		//Enemy has grave?
 		if (random(1) <= graveChance)
@@ -23,12 +33,12 @@ if (enemiesToSpawn > 0)
 		if (random(1) <= ghostChance)
 		{
 			//Spawn ghost	
-			enemy = instance_create_layer(x, y, "Enemies", objGhost);
+			enemy = instance_create_layer(spawnX, spawnY, "Enemies", objGhost);
 		}
 		else
 		{
 			//Spawn zombie	
-			enemy = instance_create_layer(x, y, "Enemies", objZombie);
+			enemy = instance_create_layer(spawnX, spawnY, "Enemies", objZombie);
 		}
 			
 		//Set enemy variables
