@@ -1,6 +1,6 @@
 /// @description Restart the game
 
-if (global.gamePaused)
+if (instance_exists(objPauseMenu))
 {
 	return;	
 }

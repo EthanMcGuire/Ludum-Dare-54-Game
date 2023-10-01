@@ -46,7 +46,7 @@ if (place_meeting(x, y, parEnemy))
 	{
 		ds_list_add(hitEnemies, enemy);
 	
-		enemy.takeDamage(dir, dmg);
+		enemy.takeDamage(dir, knockbackAmount, dmg);
 	
 		piercing--;
 	
@@ -76,7 +76,7 @@ if (place_meeting(x, y, parSolid))
 	//Get a wall to hit
 	for (var i = 0; i < ds_list_size(solidList); i++)
 	{
-		var obj = ds_list_find_value(enemyList, i);
+		var obj = ds_list_find_value(solidList, i);
 		
 		//Make sure the wall is hittable
 		if (!obj.canShootOver)
@@ -106,4 +106,10 @@ if (place_meeting(x, y, parSolid))
 		
 		instance_destroy();
 	}
+}
+
+//Out of view?
+if (entityOutOfView(id))
+{
+	instance_destroy();	
 }

@@ -21,7 +21,24 @@ function playerSetState(newState)
 			break;
 		
 		case PlayerState.DEAD:
-			//Do nothing
+		
+			//Destroy ghost
+			if (ghost != noone)
+			{
+				with (ghost)
+				{
+					instance_destroy();
+				}
+			}
+			
+			//Destroy gun
+			with (gun)
+			{
+				instance_destroy();
+			}
+			
+			gun = noone;
+			
 			break;
 	}
 }

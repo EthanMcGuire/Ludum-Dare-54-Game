@@ -8,9 +8,20 @@ if (alarm[0] != -1)
 //Unpause
 if (keyboard_check_pressed(vk_escape))
 {
+	with (objOptions)
+	{
+		instance_destroy();	
+	}
+	
 	instance_destroy();
 	
 	return;
+}
+
+//In options menu?
+if (instance_exists(objOptions))
+{
+	return;	
 }
 
 var textX, textY;
@@ -31,7 +42,7 @@ for (var i = 0; i < optionCount; i++)
 		optionSelected = i;
 	}
 	
-	textY += textYOffset;
+	textY += textSep;
 }
 
 //Select option
@@ -48,7 +59,7 @@ if (mouse_check_button_pressed(mb_left))
 				break;
 			
 			case 1:
-				//Options
+				instance_create_layer(0, 0, "Main", objOptions);
 				break;
 			
 			case 2:

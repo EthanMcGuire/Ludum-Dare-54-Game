@@ -20,19 +20,21 @@ points = 10;
 knockback = 0;
 knockbackDir = 0;
 knockbackReduction = 0.1;
-hurtKnockback = 2;	//Knockback when hurt
 
-attackDelay = 60;	//1 second between wall attacks
+knockbackAmount = 0;
+
+attackSpeed = 1;	//Wall attack per second
 currentAttackDelay = 0;
 wallToAttack = noone;	//The wall to attack
 
 chaseRange = 8;
 
-/// @function takeDamage(dir)
+/// @function takeDamage(dir, kb, dmg)
 /// @description Enemy takes damage. Enemy dies at 0 HP.
 /// @param {Real} dir The direction of the attack. Used for knockback.
+/// @param {Real} kb Knockback amount
 /// @param {Real} dmg The damage this enemy took.
-takeDamage = function(dir, dmg)
+takeDamage = function(dir, kb, dmg)
 {
 	hp -= dmg;
 	
@@ -46,7 +48,7 @@ takeDamage = function(dir, dmg)
 	}
 	else
 	{
-		knockback = hurtKnockback;
+		knockback = kb;
 		knockbackDir = dir;
 		
 		objAudioController.playSound(sndEnemyHurt);

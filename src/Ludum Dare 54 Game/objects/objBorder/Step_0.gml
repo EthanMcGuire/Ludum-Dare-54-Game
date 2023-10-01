@@ -1,28 +1,38 @@
 /// @description Change border size
 
-//X size
-if (sizeX != goalX)
+if (instance_exists(objPauseMenu))
 {
-	if (goalX > sizeX)
-	{
-		sizeX = min(sizeX + sizeChange, goalX);	
-	}
-	else
-	{
-		sizeX = max(sizeX - sizeChange, goalX);	
-	}
+	return;	
 }
 
-
-//Y size
-if (sizeY != goalY)
+if (sizeX != goalX || sizeY != goalY)
 {
-	if (goalY > sizeY)
+	//X size
+	if (sizeX != goalX)
 	{
-		sizeY = min(sizeY + sizeChange, goalY);	
+		if (goalX > sizeX)
+		{
+			sizeX = min(sizeX + sizeChange, goalX);	
+		}
+		else
+		{
+			sizeX = max(sizeX - sizeChange, goalX);	
+		}
 	}
-	else
+
+
+	//Y size
+	if (sizeY != goalY)
 	{
-		sizeY = max(sizeY - sizeChange, goalY);	
+		if (goalY > sizeY)
+		{
+			sizeY = min(sizeY + sizeChange, goalY);	
+		}
+		else
+		{
+			sizeY = max(sizeY - sizeChange, goalY);	
+		}
 	}
+	
+	setSize(sizeX, sizeY);
 }

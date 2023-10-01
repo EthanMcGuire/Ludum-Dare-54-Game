@@ -11,3 +11,8 @@ heartBoxYOffset = 4;
 heartXOffset = 4;
 heartYOffset = 4;
 heartSep = 20;
+
+scoreBoxWidth = 96;
+scoreBoxHeight = 24;
+scoreBoxXOffset = 4;
+scoreBoxYOffset = heartBoxYOffset + heartBoxHeight + 4;

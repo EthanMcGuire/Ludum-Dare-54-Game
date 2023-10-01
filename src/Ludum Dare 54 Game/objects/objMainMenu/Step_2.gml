@@ -5,6 +5,12 @@ if (alarm[0] != -1)
 	return;	
 }
 
+//In options menu?
+if (instance_exists(objOptions))
+{
+	return;	
+}
+
 var textX, textY;
 
 textX = camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2;
@@ -23,7 +29,7 @@ for (var i = 0; i < optionCount; i++)
 		optionSelected = i;
 	}
 	
-	textY += textYOffset;
+	textY += textSep;
 }
 
 //Select option
@@ -40,7 +46,7 @@ if (mouse_check_button_pressed(mb_left))
 				break;
 			
 			case 1:
-				//Options
+				instance_create_layer(0, 0, "Main", objOptions);
 				break;
 			
 			case 2:

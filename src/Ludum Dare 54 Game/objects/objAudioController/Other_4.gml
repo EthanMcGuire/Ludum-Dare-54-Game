@@ -10,4 +10,7 @@ if (room == rmTitle)
 else
 {
 	//Game music
+	playMusic(sndGameMusic);
+	setMusicGain(0, 0);
+	setMusicGain(1, 1000);
 }

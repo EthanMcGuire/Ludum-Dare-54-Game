@@ -1,14 +1,16 @@
 /// @description Variables
 
 //Size in tiles
-sizeX = 20;
-sizeY = 20;
+sizeX = 18;
+sizeY = 18;
 
 goalX = sizeX;
 goalY = sizeY;
 
-sizeMin = 5;
-sizeMax = 22;
+sizeMinX = 5;
+sizeMinY = 5;
+sizeMaxX = 26;
+sizeMaxY = 20;
 
 sizeChange = 0.1;
 
@@ -21,8 +23,8 @@ height = 0;
 /// @param {Real} ySize Y tile size
 setSize = function(xSize, ySize)
 {
-	sizeX = clamp(xSize, sizeMin, sizeMax);
-	sizeY = clamp(ySize, sizeMin, sizeMax);
+	sizeX = clamp(xSize, sizeMinX, sizeMaxX);
+	sizeY = clamp(ySize, sizeMinY, sizeMaxY);
 	
 	width = sizeX * 16;
 	height = sizeY * 16;
@@ -32,6 +34,9 @@ setSize = function(xSize, ySize)
 
 	x = camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]) / 2 - width / 2;
 	y = camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) / 2 - height / 2;
+	
+	x = (x div 16) * 16;
+	y = (y div 16) * 16;
 }
 
 /// @function setSizeGoal(xSize, ySize)
@@ -40,22 +45,22 @@ setSize = function(xSize, ySize)
 /// @param {Real} ySize Y tile size
 setSizeGoal = function(xSize, ySize)
 {
-	goalX = xSize;
-	goalY = ySize;
+	goalX = clamp(xSize, sizeMinX, sizeMaxX);
+	goalY = clamp(ySize, sizeMinY, sizeMaxY);
 }
 
 /// @function shrinkBorder(amount)
 /// @param {Real} amount Amount to shrink the border in tiles.
 shrinkBorder = function(amount)
 {
-	setSizeGoal(sizeX - amount, sizeY - amount);
+	setSizeGoal(goalX - amount, goalY - amount);
 }
 
 /// @function enlargeBorder(amount)
 /// @param {Real} amount Amount to enlarge the border in tiles.
 enlargeBorder = function(amount)
 {
-	setSizeGoal(sizeX + amount, sizeY + amount);
+	setSizeGoal(goalX + amount, goalY + amount);
 }
 
 setSize(sizeX, sizeY);

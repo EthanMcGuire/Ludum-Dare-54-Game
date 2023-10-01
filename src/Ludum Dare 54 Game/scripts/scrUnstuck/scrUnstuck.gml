@@ -87,7 +87,7 @@ function spotFree(x, y)
 	bboxH = bbox_bottom - 1 - bbox_top;
 	
 	//Meeting solid
-	if (position_meeting(x + bboxW / 2, y + bboxH / 2, parSolid))
+	if (place_meeting(x + bboxW / 2, y + bboxH / 2, parSolid))
 	{
 		return false;	
 	}

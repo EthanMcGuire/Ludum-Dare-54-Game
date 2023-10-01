@@ -23,5 +23,8 @@ if (!gamePaused())
 }
 
 //Set gun position
-gun.setPosition(x, y);
-gun.aim();
+if (gun != noone)
+{
+	gun.setPosition(x , y + abs(image_yscale) * 3);
+	gun.aim();
+}

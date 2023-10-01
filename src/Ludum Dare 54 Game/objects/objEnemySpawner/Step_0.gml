@@ -66,11 +66,13 @@ if (enemiesToSpawn > 0)
 		enemy.y = spawnY;
 		
 		//Set enemy variables
-		enemy.grave = false;
+		enemy.grave = grave;
 		enemy.image_xscale *= enemySize;
 		enemy.image_yscale *= enemySize;
 		enemy.spd *= enemySpeed;
 		enemy.hp += enemyHpBonus;
+		enemy.attackSpeed = enemyWallAttackSpeed;
+		enemy.knockbackAmount = enemyKnockback;
 		
 		//Set spawn time
 		spawnTime = game_get_speed(gamespeed_fps) / spawnRate;

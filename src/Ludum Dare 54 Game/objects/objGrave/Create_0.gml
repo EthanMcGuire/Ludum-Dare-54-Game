@@ -12,6 +12,7 @@ spriteNight = sprGraveNight;
 sprite_index = spriteDay;
 
 objAudioController.playSound(sndGraveRise);
+objCamera.setScreenshake(15);
 
 //Check if meeting player
 with (objPlayer)

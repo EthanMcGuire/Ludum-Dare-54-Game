@@ -13,6 +13,9 @@ state = PlayerState.IDLE;
 //Gun
 gun = instance_create_layer(x, y, "Gun", parGun);
 
+//Ghost
+ghost = noone;
+
 //Stats
 maxHp = 3;
 hp = maxHp;
@@ -25,7 +28,6 @@ iframes = 0;
 knockback = 0;
 knockbackDir = 0;
 knockbackReduction = 0.1;
-hurtKnockback = 2.5;	//Knockback when hurt
 
 //Sprite
 spriteDay = sprPlayerDay;
@@ -47,10 +49,11 @@ switchSprite = function()
 	}
 }
 
-/// @function takeDamage(dir)
+/// @function takeDamage(dir, kb)
 /// @description Player takes 1 damage. Player dies at 0 HP.
 /// @param {Real} dir The direction of the attack. Used for knockback.
-takeDamage = function(dir)
+/// @param {Real} kb Knockback amount
+takeDamage = function(dir, kb)
 {
 	if (iframes > 0 || state == PlayerState.HURT || state == PlayerState.DEAD)
 	{
@@ -61,6 +64,9 @@ takeDamage = function(dir)
 	
 	iframes = iframeTime;
 	
+	//Screenshake
+	objCamera.setScreenshake(10);
+	
 	if (hp == 0)
 	{
 		objAudioController.playSound(sndPlayerDie);
@@ -69,7 +75,7 @@ takeDamage = function(dir)
 	}
 	else
 	{
-		knockback = hurtKnockback;
+		knockback = kb;
 		knockbackDir = dir;
 		
 		objAudioController.playSound(sndPlayerHurt);

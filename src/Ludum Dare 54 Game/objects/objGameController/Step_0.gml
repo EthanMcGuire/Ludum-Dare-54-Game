@@ -1,5 +1,11 @@
 /// @description Game control
 
+//Start delay
+if (alarm[1] != -1)
+{
+	return;	
+}
+
 //Game paused?
 if (instance_exists(objPauseMenu))
 {
@@ -17,6 +23,11 @@ if (keyboard_check_pressed(vk_escape))
 //Delay
 if (delay > 0)
 {
+	if (day && (delay == 180 ||delay == 120 || delay == 60))
+	{
+		objAudioController.playSound(sndTimer);	
+	}
+	
 	delay = max(delay - 1, 0);
 	
 	if (delay == 0)
@@ -26,12 +37,7 @@ if (delay > 0)
 		if (day)
 		{
 			//Upgrades!	
-			var centerX = camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]);
-			var centerY = camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]);
-			
-			instance_create_layer(centerX - 64, centerY, "Main", objUpgrade);
-			instance_create_layer(centerX, centerY, "Main", objUpgrade);
-			instance_create_layer(centerX + 64, centerY, "Main", objUpgrade);
+			alarm[0] = upgradeDelay;
 		}
 		else
 		{
@@ -52,13 +58,17 @@ else
 		if (instance_number(parEnemy) == 0 && objEnemySpawner.doneSpawning())
 		{
 			delay = timeDelay;	
+			
+			//Increase point multiplier for winning
+			pointMultiplier += 0.5;
 		}
 	}
 	else
 	{
 		//Wait till the player has chosen an upgrade
-		if (!instance_exists(objUpgrade))
+		if (alarm[0] == -1 && !instance_exists(objUpgrade) && !instance_exists(objWallPlacer))
 		{
+			alarm[1] = 60;	//Delay before starting the timer
 			delay = timeDelay;
 		}
 	}

@@ -1,6 +1,6 @@
 /// @description Get placed
 
-if (gamePaused())
+if (instance_exists(objPauseMenu))
 {
 	return;	
 }
