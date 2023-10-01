@@ -20,6 +20,25 @@ if (enemiesToSpawn > 0)
 		var enemy = noone;
 		var spawnX, spawnY;
 		var centerX, centerY;
+		var success;
+		
+		//Enemy has grave?
+		if (random(1) <= graveChance)
+		{
+			grave = true;	
+		}
+		
+		//Spawn the enemy
+		if (random(1) <= ghostChance)
+		{
+			//Spawn ghost	
+			enemy = instance_create_layer(0, 0, "Objects", objGhost);
+		}
+		else
+		{
+			//Spawn zombie	
+			enemy = instance_create_layer(0, 0, "Objects", objZombie);
+		}
 		
 		centerX = room_width / 2;
 		centerY = room_height / 2;
@@ -29,28 +48,25 @@ if (enemiesToSpawn > 0)
 		{
 			spawnX = irandom_range(centerX - spawnDistanceRadius, centerX + spawnDistanceRadius);
 			spawnY = irandom_range(centerY - spawnDistanceRadius, centerY + spawnDistanceRadius);
-		}
-		until (point_distance(centerX, centerY, spawnX, spawnY) >= minSpawnDistance);
-		
-		//Enemy has grave?
-		if (random(1) <= graveChance)
-		{
-			grave = true;	
-		}
-		
-		if (random(1) <= ghostChance)
-		{
-			//Spawn ghost	
-			enemy = instance_create_layer(spawnX, spawnY, "Objects", objGhost);
-		}
-		else
-		{
-			//Spawn zombie	
-			enemy = instance_create_layer(spawnX, spawnY, "Objects", objZombie);
-		}
 			
+			success = true;	
+			
+			if (point_distance(centerX, centerY, spawnX, spawnY) < minSpawnDistance)
+			{
+				success = false;	
+			}
+			else if (entityCollision(enemy, spawnX, spawnY, parEnemy))
+			{
+				success = false;	
+			}
+		}
+		until (success);
+			
+		enemy.x = spawnX;
+		enemy.y = spawnY;
+		
 		//Set enemy variables
-		enemy.grave = true;
+		enemy.grave = false;
 		enemy.image_xscale *= enemySize;
 		enemy.image_yscale *= enemySize;
 		enemy.spd *= enemySpeed;

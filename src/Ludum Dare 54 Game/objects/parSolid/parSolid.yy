@@ -12,8 +12,8 @@
     "path": "folders/Objects/Solids.yy",
   },
   "parentObjectId": {
-    "name": "objDepthObject",
-    "path": "objects/objDepthObject/objDepthObject.yy",
+    "name": "parEnemyCollider",
+    "path": "objects/parEnemyCollider/parEnemyCollider.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

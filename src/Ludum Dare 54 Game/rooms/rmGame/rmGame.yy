@@ -11,10 +11,14 @@
   ],
   "isDnd": false,
   "layers": [
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Mouse","depth":-10099,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Main","depth":-9999,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5F6FB66","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"objGameController","path":"objects/objGameController/objGameController.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":16.0,"y":16.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Bullets","depth":-9899,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Gun","depth":-9799,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Objects","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Border","depth":50,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":23,"SerialiseWidth":40,"TileCompressedData":[
 -41,4,-34,1,-4,2,-2,4,-37,1,3,2,4,4,-14,1,3,2,1,3,-3,1,1,3,-3,1,1,3,-3,1,1,3,-9,1,-2,4,-4,1,-2,2,
 -4,1,5,3,1,3,2,1,-3,2,2,1,2,-7,1,-3,3,5,1,3,3,2,2,-3,1,-2,4,-3,1,-4,2,-2,1,-2,3,-3,1,-3,2,7,
@@ -28,7 +32,7 @@
 4,2,3,3,2,-10,1,3,2,3,1,-3,2,7,3,1,1,2,2,4,4,-3,2,1,1,-6,2,1,1,-4,2,1,3,-8,1,8,3,1,3,2,
 3,1,3,3,-4,2,4,1,2,4,4,-3,2,-2,1,-5,2,-12,1,-6,3,-4,1,8,2,1,3,2,3,2,4,4,-9,2,-2,1,-2,3,-2,2,
 16,3,1,3,3,1,3,1,1,2,3,2,3,1,2,1,1,-3,2,-2,3,4,2,3,4,4,-9,2,-2,1,-3,2,-2,3,-2,1,3,2,1,3,
--17,1,-2,4,-7,2,-3,1,-4,2,2,1,2,-8,1,-2,2,1,1,-9,2,-2,1,-41,4,-40,1,],"TileDataFormat":1,},"tilesetId":{"name":"tsDay","path":"tilesets/tsDay/tsDay.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},
+-17,1,-2,4,-7,2,-3,1,-4,2,2,1,2,-8,1,-2,2,1,1,-9,2,-2,1,-2,4,-38,1,-41,4,],"TileDataFormat":1,},"tilesetId":{"name":"tsDay","path":"tilesets/tsDay/tsDay.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
   "parent": {

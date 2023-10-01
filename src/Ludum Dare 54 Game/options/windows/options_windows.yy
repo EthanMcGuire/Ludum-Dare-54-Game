@@ -9,7 +9,7 @@
   "option_windows_copyright_info": "",
   "option_windows_description_info": "A game made for Ludum Dare 54.",
   "option_windows_disable_sandbox": false,
-  "option_windows_display_cursor": true,
+  "option_windows_display_cursor": false,
   "option_windows_display_name": "Ludum Dare 54 Game",
   "option_windows_enable_steam": false,
   "option_windows_executable_name": "${project_name}.exe",

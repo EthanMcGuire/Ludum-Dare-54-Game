@@ -1,29 +1,44 @@
-/// @function moveObject(entity, xMove, yMove)
+/// @function moveObject(entity, xMove, yMove, object)
 /// @description Moves a game object and checks for collision
 /// @param {ID} entity The entity to move
 /// @param {Real} xMove X move amount
 /// @param {Real} yMove Y move amount
-/// @return {Bool} Returns true if a collision is deteected.
-function moveObject(entity, xMove, yMove)
+/// @param {ID} object Object to check collisions for.
+/// @return {ID} Returns ID of object collided with. Otherwise returns noone.
+function moveObject(entity, xMove, yMove, object)
 {
 	with (entity)
 	{
-		if (place_meeting(x + xMove, y + yMove, parSolid))
+		var collision = false;
+		
+		if (place_meeting(x + xMove, y, object))
 		{
-			while (!place_meeting(x + sign(xMove), y + sign(yMove), parSolid))	
+			while (!place_meeting(x + sign(xMove), y, object))	
 			{
-				x += sign(xMove);	
-				y += sign(yMove);	
+				x += sign(xMove);		
 			}
 			
-			return true;
+			collision = true;
 		}
 		else
 		{
 			x += xMove;
-			y += yMove;
-			
-			return false;
 		}
+		
+		if (place_meeting(x, y + yMove, object))
+		{
+			while (!place_meeting(x, y + sign(yMove), object))	
+			{
+				y += sign(yMove);		
+			}
+			
+			collision = true;
+		}
+		else
+		{
+			y += yMove;
+		}
+		
+		return collision;
 	}
 }

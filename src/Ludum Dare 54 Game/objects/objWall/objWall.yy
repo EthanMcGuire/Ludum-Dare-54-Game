@@ -12,8 +12,8 @@
     "path": "folders/Objects/Solids.yy",
   },
   "parentObjectId": {
-    "name": "parSolid",
-    "path": "objects/parSolid/parSolid.yy",
+    "name": "parWall",
+    "path": "objects/parWall/parWall.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

@@ -2,6 +2,8 @@
 
 global.gamePaused = false;
 
+points = 0;
+
 timeDelay = 180;	//Delay in frames before changing the time
 delay = timeDelay;
 
@@ -13,6 +15,8 @@ day = true;
 //Create the game objects
 instance_create_layer(0, 0, "Main", objCamera);
 instance_create_layer(0, 0, "Main", objEnemySpawner);
+instance_create_layer(0, 0, "Main", objHud);
+instance_create_layer(0, 0, "Border", objBorder);
 instance_create_layer(room_width / 2, room_height / 2, "Objects", objPlayer);
 
 /// @function changeTime()
@@ -31,6 +35,12 @@ changeTime = function()
 	if (day)
 	{
 		tilemap_tileset(tileId, tsDay);
+		
+		//Spawn graves
+		with (objGraveSpawner)
+		{
+			spawnGrave();	
+		}
 	}
 	else
 	{
@@ -49,3 +59,9 @@ changeTime = function()
 	}
 }
 
+/// @function addPoints(amount)
+/// @param {Real} amount Amount of points to add
+addPoints = function(amount)
+{
+	points += amount;	
+}

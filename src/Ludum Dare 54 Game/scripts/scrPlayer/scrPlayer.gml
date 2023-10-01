@@ -48,6 +48,7 @@ function playerIdleState()
 function playerMoveState()
 {
 	var moveX, moveY;
+	var moveDir;
 	
 	moveX = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 	moveY = keyboard_check(ord("S")) - keyboard_check(ord("W"));
@@ -61,12 +62,21 @@ function playerMoveState()
 	}
 	
 	//Move
+	moveDir = point_direction(x, y, x + moveX, y + moveY);
+	
+	//moveX = lengthdir_x(spd, moveDir);
+	//moveY = lengthdir_y(spd, moveDir);
+	
 	moveX *= spd;
 	moveY *= spd;
 	
-	moveObject(id, moveX, moveY);
+	if (moveX != 0)
+	{
+		image_xscale = abs(image_xscale) * sign(moveX);	
+	}
+	
+	moveObject(id, moveX, moveY, parSolid);
 }
-
 
 /// @function playerHurtState()
 /// @description Runs during the players hurt state
@@ -78,7 +88,11 @@ function playerHurtState()
 	moveX = lengthdir_x(knockback, knockbackDir);
 	moveY = lengthdir_y(knockback, knockbackDir);
 	
-	moveObject(id, moveX, moveY);
+	//Collision?
+	if (moveObject(id, moveX, moveY, parSolid))
+	{
+		knockback = 0;
+	}
 	
 	knockback = max(knockback - knockbackReduction, 0);
 	
@@ -94,7 +108,7 @@ function playerHurtState()
 function playerDeadState()
 {
 	//Fade away
-	image_alpha = max(image_alpha - 0.01, 0);
+	image_alpha = max(image_alpha - 0.02, 0);
 	
 	if (image_alpha == 0)
 	{

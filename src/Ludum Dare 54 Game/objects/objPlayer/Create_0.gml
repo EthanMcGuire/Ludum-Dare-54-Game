@@ -10,17 +10,24 @@ enum PlayerState
 
 state = PlayerState.IDLE;
 
-hp = 3;
+//Gun
+gun = instance_create_layer(x, y, "Gun", parGun);
+
+//Stats
+maxHp = 3;
+hp = maxHp;
 spd = 1;
 
-moveXRemainder = 0;
-moveYRemainder = 0;
+iframeTime = 90;
+iframes = 0;
 
+//knockback
 knockback = 0;
 knockbackDir = 0;
 knockbackReduction = 0.1;
-hurtKnockback = 2;	//Knockback when hurt
+hurtKnockback = 2.5;	//Knockback when hurt
 
+//Sprite
 spriteDay = sprPlayerDay;
 spriteNight = sprPlayerNight;
 
@@ -45,7 +52,14 @@ switchSprite = function()
 /// @param {Real} dir The direction of the attack. Used for knockback.
 takeDamage = function(dir)
 {
+	if (iframes > 0 || state == PlayerState.HURT || state == PlayerState.DEAD)
+	{
+		return;	
+	}
+	
 	hp--;
+	
+	iframes = iframeTime;
 	
 	if (hp == 0)
 	{
